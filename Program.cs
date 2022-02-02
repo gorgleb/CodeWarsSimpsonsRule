@@ -30,21 +30,17 @@ namespace CodeWars
             h = (b - a) / (3 * n);
             for (int i = 1; i < n/2; i++)
             {
-                firstloop += func(a + (2 * i - 1) * h);
+                firstloop += 3 / 2 * (Math.Sin(Math.Pow((a + (2 * i - 1) * h), 3)));
             }
             for (int i = 1; i < n/2-1; i++)
             {
-                secondloop += func(a + 2 * i * h);
+                secondloop += 3 / 2 * (Math.Sin(Math.Pow((a + 2 * i * h), 3)));
             }
-            answer=(h*(1/3))*(func(a)+func(b)+4*firstloop+2*secondloop);
+            answer=(h*0.333333)*(3 / 2 * (Math.Sin(Math.Pow(a, 3))) + 3 / 2 * (Math.Sin(Math.Pow(b, 3))) + 4*firstloop+2*secondloop);
             return answer;
 
         }
-        public static double func(double x)
-        {
-            x = 3 / 2 * (Math.Sin(Math.Pow(x, 3)));
-            return x;
-        }
+        
     }
 }
     
